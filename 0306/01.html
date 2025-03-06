@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content</title>
+    <style>
+        #content {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">Welcome!</div>
+
+    <script>
+        const messages = [
+            "Welcome!",
+            "Hello, World!",
+            "Enjoy your stay!",
+            "Have a great day!",
+            "Stay positive!"
+        ];
+
+        const colors = [
+            "#FF5733",
+            "#33FF57",
+            "#3357FF",
+            "#F333FF",
+            "#FF33A1"
+        ];
+
+        let index = 0;
+        const contentDiv = document.getElementById('content');
+
+        setInterval(() => {
+            index = (index + 1) % messages.length;
+            contentDiv.textContent = messages[index];
+            document.body.style.backgroundColor = colors[index];
+        }, 3000);
+    </script>
+</body>
+</html>
