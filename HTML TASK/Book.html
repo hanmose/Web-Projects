@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book</title>
+  <link rel="stylesheet" href="./font/Dokdo.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .text {
+      position: absolute;
+      top: 35%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      text-decoration: none;
+      font-family: 'Dokdo', cursive;
+      font-size: 4vh; /* ✅ 화면 높이에 따라 글씨 크기 결정 */
+      color: black
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="./image/book.png" alt="Book Image" />
+    <h1 class = "text" style="top:25%;">Unity</h1>
+    <a class="text" href="./Unity-Number/1강.html">1장</a>
+  </div>
+</body>
+</html>
