@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        fun1 = function() {
-            alert("JavaScript_First");
+        function callTenTimes(callback){
+            for(let i = 0; i < 10; i++){
+                callback();
+            }
         }
 
-        fun1 = function() {
-            alert("JavaScript_Second");
-        }
+        // let fun = function(){
+        //     alert("Hello");
+        // }
+        callTenTimes(fun);
 
-        fun1();
     </script>
 </head>
 <body>
+    
 </body>
 </html>
