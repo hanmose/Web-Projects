@@ -6,33 +6,50 @@
     <title>Document</title>
     <script>
         let img;
-        function changeImage() {
-            let img = document.getElementById("img1");
-            img.src = "./imgs/리트리버.jpg";
-            img.width = "600px";
+        function changeImage(){
+            img = document.getElementById("img1");
+            img.src = "imgs/jang.jpg"
+            img.width = 600;
         }
-        function reset() {
+        function reset(){
             img.src = "";
-            img.width = "0px";
+            img.width = 0;
         }
-        function selectImage() {
+
+        function selectedChangeImage(){
             let select = document.querySelector("select");
-            let imgSrc = select.value;
-            img.src = imgSrc;
-            img.width = "256px";
+            img = document.getElementById("img1");
+            let index = select.selectedIndex;
+            img.src = select.options[index].value;
         }
+
         function cheerUp(){
-            document.body.setAttribute("data-cheerUp","Ive you!");
-            alert(document.body.getAttribute("data-cheerUp"));
+            document.body.setAttribute("data-cheerup", "Ive is the best~~ ");
+            alert(document.body.getAttribute("data-cheerup"));
+        }
+
+        let clock;
+        function callSetClock(){
+            clock = document.querySelector("h1");
+            setClock();
+            setInterval(setClock, 1000);
+        }
+
+        function setClock(){
+            let now = new Date();
+            clock.innerHTML = now.toString();
         }
     </script>
 </head>
-<body>
+<body onload="callSetClock()">
+    <hr>
     <select name="good" id="good" onchange="changeImage()">
         <option value="./imgs/imgaes.webp">리트</option>
         <option value="./imgs/siva.jpg">시바</option>
         <option value="./imgs/jindo.jpg">진도</option>
         <option value="./imgs/samo.jpg">사모</option>
     </select>
+    <hr>
+    <h1></h1>
 </body>
 </html>
