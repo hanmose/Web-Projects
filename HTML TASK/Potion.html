@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>연금술 항아리</title>
-  <style>    
-    html, body {
+  <style>
+    * {
       margin: 0;
       padding: 0;
+    }
+
+    html, body {
       height: 100%;
-      background-image: url(./image/jar.png);
       font-family: sans-serif;
       text-align: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-
     }
 
     input[type="radio"] {
@@ -25,36 +23,35 @@
       cursor: pointer;
       margin: 0 10px;
       font-weight: bold;
+      font-size: 1.2em;
+      z-index: 2;
+      position: relative;
     }
 
-    .pot-image {
-      width: 200px;
-      height: 200px;
-      margin: 50px auto;
+    .wrapper {
+      height: 100%;
+      background-image: url('./image/ExJar.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      background-image: url('default-pot.png'); /* 기본 항아리 이미지 */
       transition: background-image 0.3s;
     }
 
-    /* 항아리 이미지 변경 */
-    #red:checked ~ .pot-image {
-      background-image: url('red-pot.png');
+    #red:checked ~ .wrapper {
+      background-image: url('./image/red.png');
     }
 
-    #blue:checked ~ .pot-image {
+    #blue:checked ~ .wrapper {
       background-image: url('blue-pot.png');
     }
 
-    #green:checked ~ .pot-image {
+    #green:checked ~ .wrapper {
       background-image: url('green-pot.png');
     }
   </style>
 </head>
 <body>
-
-  <!-- 텍스트 선택 -->
+  <!-- 선택 버튼 -->
   <input type="radio" name="material" id="red">
   <label for="red">🔥 불꽃 가루</label>
 
@@ -64,8 +61,7 @@
   <input type="radio" name="material" id="green">
   <label for="green">🌿 생명의 잎</label>
 
-  <!-- 이미지가 바뀌는 영역 -->
-  <div class="pot-image"></div>
-
+  <!-- 전체 배경이 되는 부분 -->
+  <div class="wrapper"></div>
 </body>
 </html>
