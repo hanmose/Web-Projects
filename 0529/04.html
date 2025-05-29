@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let img;
+        function changeImage() {
+            let img = document.getElementById("img1");
+            img.src = "./imgs/리트리버.jpg";
+            img.width = "600px";
+        }
+        function reset() {
+            img.src = "";
+            img.width = "0px";
+        }
+    </script>
+</head>
+<body>
+    <hr>
+    <button onclick="changeImage()">리트리버</button>
+    <button onclick="reset()">Reset</button>
+    <hr>
+    <img id="img1" src="" alt="">
+</body>
+</html>

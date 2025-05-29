@@ -15,53 +15,99 @@
       text-align: center;
     }
 
-    input[type="radio"] {
+    input[type="checkbox"] {
       display: none;
     }
 
-    label {
-      cursor: pointer;
-      margin: 0 10px;
-      font-weight: bold;
-      font-size: 1.2em;
-      z-index: 2;
-      position: relative;
-    }
-
     .wrapper {
-      height: 100%;
-      background-image: url('./image/ExJar.png');
-      background-size: contain;
+      position: relative;
+      height: 100vh;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       transition: background-image 0.3s;
+      background-image: url('./image/Jars/ExJar.png');
     }
 
-    #red:checked ~ .wrapper {
-      background-image: url('./image/red.png');
+    /* 공통 텍스트 스타일 */
+    .text, .material-label {
+      position: absolute;
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+      z-index: 2;
     }
 
-    #blue:checked ~ .wrapper {
-      background-image: url('blue-pot.png');
+    /* 타이틀 텍스트 중앙 배치 */
+    .text {
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    #green:checked ~ .wrapper {
-      background-image: url('green-pot.png');
+    /* 재료 라벨들 이미지 위에 배치 */
+    .label-red {
+      bottom: 75%;
+      left: 28%;
+      cursor: pointer;
+    }
+
+    .label-blue {
+      bottom: 75%;
+      left: 45%;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
+
+    .label-green {
+      bottom: 75%;
+      right: 40%;
+      cursor: pointer;
+    }
+
+    /* 배경 조합 조건 */
+    #red:checked ~ #blue:not(:checked) ~ #green:not(:checked) ~ .wrapper {
+      background-image: url('./image/Jars/red.png');
+    }
+
+    #red:not(:checked) ~ #blue:checked ~ #green:not(:checked) ~ .wrapper {
+      background-image: url('./image/Jars/blue.png');
+    }
+
+    #red:not(:checked) ~ #blue:not(:checked) ~ #green:checked ~ .wrapper {
+      background-image: url('./image/Jars/green.png');
+    }
+
+    #red:checked ~ #blue:checked ~ #green:not(:checked) ~ .wrapper {
+      background-image: url('./image/Jars/purple.png');
+    }
+
+    #red:checked ~ #blue:not(:checked) ~ #green:checked ~ .wrapper {
+      background-image: url('./image/Jars/yellow.png');
+    }
+
+    #red:not(:checked) ~ #blue:checked ~ #green:checked ~ .wrapper {
+      background-image: url('./image/Jars/mint.png');
+    }
+
+    #red:checked ~ #blue:checked ~ #green:checked ~ .wrapper {
+      background-image: url('legendary-pot.png');
     }
   </style>
 </head>
 <body>
-  <!-- 선택 버튼 -->
-  <input type="radio" name="material" id="red">
-  <label for="red">🔥 불꽃 가루</label>
+  <form>
+    <!-- 체크박스 순서 중요 -->
+    <input type="checkbox" id="red">
+    <input type="checkbox" id="blue">
+    <input type="checkbox" id="green">
 
-  <input type="radio" name="material" id="blue">
-  <label for="blue">💧 푸른 정수</label>
-
-  <input type="radio" name="material" id="green">
-  <label for="green">🌿 생명의 잎</label>
-
-  <!-- 전체 배경이 되는 부분 -->
-  <div class="wrapper"></div>
+    <div class="wrapper">
+      <label class="material-label label-red" for="red">ㅤㅤㅤㅤㅤ<br>ㅤㅤㅤㅤㅤ</label>
+      <label class="material-label label-blue" for="blue">ㅤㅤㅤㅤㅤ<br>ㅤㅤㅤㅤㅤ</label>
+      <label class="material-label label-green" for="green">ㅤㅤㅤㅤㅤ<br>ㅤㅤㅤㅤㅤ</label>
+    </div>
+  </form>
 </body>
 </html>
