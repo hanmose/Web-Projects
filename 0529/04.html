@@ -15,13 +15,24 @@
             img.src = "";
             img.width = "0px";
         }
+        function selectImage() {
+            let select = document.querySelector("select");
+            let imgSrc = select.value;
+            img.src = imgSrc;
+            img.width = "256px";
+        }
+        function cheerUp(){
+            document.body.setAttribute("data-cheerUp","Ive you!");
+            alert(document.body.getAttribute("data-cheerUp"));
+        }
     </script>
 </head>
 <body>
-    <hr>
-    <button onclick="changeImage()">리트리버</button>
-    <button onclick="reset()">Reset</button>
-    <hr>
-    <img id="img1" src="" alt="">
+    <select name="good" id="good" onchange="changeImage()">
+        <option value="./imgs/imgaes.webp">리트</option>
+        <option value="./imgs/siva.jpg">시바</option>
+        <option value="./imgs/jindo.jpg">진도</option>
+        <option value="./imgs/samo.jpg">사모</option>
+    </select>
 </body>
 </html>
