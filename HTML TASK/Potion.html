@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>연금술 항아리</title>
+  <style>    
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-image: url(./image/jar.png);
+      font-family: sans-serif;
+      text-align: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    label {
+      cursor: pointer;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .pot-image {
+      width: 200px;
+      height: 200px;
+      margin: 50px auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('default-pot.png'); /* 기본 항아리 이미지 */
+      transition: background-image 0.3s;
+    }
+
+    /* 항아리 이미지 변경 */
+    #red:checked ~ .pot-image {
+      background-image: url('red-pot.png');
+    }
+
+    #blue:checked ~ .pot-image {
+      background-image: url('blue-pot.png');
+    }
+
+    #green:checked ~ .pot-image {
+      background-image: url('green-pot.png');
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 텍스트 선택 -->
+  <input type="radio" name="material" id="red">
+  <label for="red">🔥 불꽃 가루</label>
+
+  <input type="radio" name="material" id="blue">
+  <label for="blue">💧 푸른 정수</label>
+
+  <input type="radio" name="material" id="green">
+  <label for="green">🌿 생명의 잎</label>
+
+  <!-- 이미지가 바뀌는 영역 -->
+  <div class="pot-image"></div>
+
+</body>
+</html>

@@ -28,21 +28,29 @@
 
     .text {
       position: absolute;
-      top: 35%;
       left: 35%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       text-decoration: none;
-      font-family: 'Dokdo', cursive;
-      font-size: 4vh; /* ✅ 화면 높이에 따라 글씨 크기 결정 */
-      color: black
+      font-family: 'MYYeongnamnu', cursive;
+      font-size: 4vh;
+      color: black;
     }
+
+    /* 개별 위치 지정 */
+    .chapter1 { top: 35%; }
+    .chapter2 { top: 44%; }
+    .chapter3 { top: 53%; }
+    .chapter4 { top: 62%; }
   </style>
 </head>
 <body>
   <div class="image-container">
     <img src="./image/book.png" alt="Book Image" />
-    <h1 class = "text" style="top:25%;">Unity</h1>
-    <a class="text" href="./Unity-Number/1강.html">1장</a>
+    <h1 class="text" style="top:25%;">Unity</h1>
+    <a class="text chapter1" href="./Unity-Number/1강.html">1강</a>
+    <a class="text chapter2" href="./Unity-Number/2강.html">2강</a>
+    <a class="text chapter3" href="./Unity-Number/memo.html">Memo</a>
+    <a class="text chapter4" href="./Unity-Number/Quiz.html">Quiz</a>
   </div>
 </body>
 </html>
