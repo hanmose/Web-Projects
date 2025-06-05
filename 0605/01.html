@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script>
+        function convert(){
+            Image.src = "imgs/samo.webp"            
+        }s
+        function overImage(img) {
+            img.src = "imgs/siva.png";
+        }
+        function outImage(img) {
+            img.src = "imgs/samo.webp";
+            onmous
+        }
+    </script>
+</head>
+<body>
+    <button onclick="convert()" >알림</button>
+    <br><br>
+    <img class ="ld" src="imgs/images.webp" onmouseover="this.src='imgs/jindo.jpeg'" onmouseout="this.src='imgs/images.webp'" alt="">
+    <br><br>    
+    <img src="imgs/samo.webp" onmouseout="outImage(this)" onmouseover="overImage(this)" alt="">
+    <br><br>
+    <img id="Image" src="imgs/samo.webp" id="img3">
+</body>
+</html>
