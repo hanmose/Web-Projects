@@ -15,6 +15,10 @@
             img.src = "imgs/samo.webp";
             onmous
         }
+        function plusStar(btn){
+            btn.textContent = btn.textContent + "★";
+            
+        }
     </script>
 </head>
 <body>
@@ -25,5 +29,8 @@
     <img src="imgs/samo.webp" onmouseout="outImage(this)" onmouseover="overImage(this)" alt="">
     <br><br>
     <img id="Image" src="imgs/samo.webp" id="img3">
+    <br><br>
+    <buton onclick="plusStar(this)"></button>
+        <h1></h1>
 </body>
 </html>
